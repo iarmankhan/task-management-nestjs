@@ -27,4 +27,9 @@ export class TasksService {
     this.tasks.push(task);
     return task;
   }
+
+  deleteTask(id: string): void {
+    const index = this.tasks.findIndex((task) => task.id === id);
+    if (index !== -1) this.tasks.splice(index, 1);
+  }
 }
